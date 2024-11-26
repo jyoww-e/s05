@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "sans-serif";
+}
+
+.navbar-brand img {
+  width: 150px;
+  display: block;
+  /* height: 60px; */
+  /* margin: 10px auto; */
+}
+
+.navbar {
+  padding: 0.8rem;
+  padding-right: 25px;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(#1439d9, rgb(62, 162, 247));
+  border-bottom: 1px solid rgb(207, 203, 203);
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  /* justify-content: flex-end; */
+  gap: 1rem;
+  align-items: center;
+  /* justify-content: end; */
+  padding-right: 40px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item :hover {
+  text-decoration: none;
+  color: #1439d9;
+}
+
+#intro {
+  text-align: center;
+}
+
+.profile-pic {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-radius: 50%; */
+  border: 1px solid rgb(62, 162, 247);
+  background: linear-gradient(#1439d9, rgb(62, 162, 247));
+  margin-bottom: 20px;
+}
+
+#intro .card {
+  border: 0;
+}
+
+article {
+  margin: 1.5rem 1rem;
+}
+
+article h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#projects .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#projects .card {
+  padding: 0;
+}
+
+#pre-footer {
+  /* background-image: linear-gradient(-90deg, #1439d9, rgb(62, 162, 247)); */
+  background-color: rgb(62, 162, 247);
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  color: white;
+
+  margin: 0;
+}
+
+#pre-footer h3 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#pre-footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#pre-footer p:hover {
+  cursor: pointer;
+  color: #1439d9;
+  text-decoration: underline;
+}
+
+footer {
+  padding: 0.7rem;
+  text-align: end;
+}
+footer span {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
