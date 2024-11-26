@@ -122,3 +122,10 @@ footer span {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+
+.list-group-item-action {
+  color: white;
+  background-color: transparent;
+  border: 0;
+  /* border-bottom: 1px solid white; */
+}
