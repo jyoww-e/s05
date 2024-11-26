@@ -19,7 +19,7 @@ body {
   padding: 0.8rem;
   padding-right: 25px;
   margin-bottom: 2rem;
-  background-image: linear-gradient(#1439d9, rgb(62, 162, 247));
+  background-image: linear-gradient(#51a3a3, #75485e);
   border-bottom: 1px solid rgb(207, 203, 203);
 }
 
@@ -41,4 +41,19 @@ body {
 .navbar-brand {
   text-decoration: none;
   color: white;
+}
+
+.form-control:focus {
+  border-color: rgb(88, 128, 162);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(88, 128, 162, 0.25);
+}
+
+#btnProceed {
+  background-image: linear-gradient(#51a3a3, #75485e);
+  border: none;
+}
+#btnProceed:hover {
+  background-image: linear-gradient(#69cfcf, #c0789b);
+  border: none;
 }

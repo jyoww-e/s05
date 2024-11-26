@@ -18,8 +18,8 @@ function loadHistory() {
   for (let i = 0; i < transHistory.length; i++) {
     str += `<tr>
                 <td>${transHistory[i].mobile}</td>
-                <td>${transHistory[i].amount}</td>
-                <td>${transHistory[i].balance}</td>
+                <td class="text-end">&#8369; ${transHistory[i].amount}</td>
+                <td class="text-end">&#8369; ${transHistory[i].balance}</td>
             </tr>`;
   }
 
