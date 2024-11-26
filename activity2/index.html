@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pasaload</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../activity/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <!-- <img src="img/logo2.png" alt="logo"/> -->
+             <h1>Pasaload</h1>
+        </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="btnAddBalance">Add Balance</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="title">Pasaload</h2>
+          <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title d-inline">AVAILABLE BALANCE: &#8369;</h4>
+                        <h4 class="card-title d-inline" id="balance">XXX-XXX</h4>
+                    </div>
+                    <div class="card-body" style="margin-left: auto; margin-right: auto; width: fit-content;">
+                        
+                        
+                        <div class="row mb-3">
+                            <label for="mobile" class="col col-form-label">Mobile Number:</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="mobile">
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="amount" class="col col-form-label">Amount:</label>
+                            <div class="col">
+                                <input type="number" class="form-control" id="amount">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <button class="btn btn-success rounded-pill" id="btnProceed">Proceed</button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Transaction History</h4>
+                            </div>
+                            <div class="card-body">
+                                <table id="transact-table" class="table">
+                                    
+                                </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script src="../activity/bootstrap/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
