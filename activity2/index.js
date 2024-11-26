@@ -51,21 +51,25 @@ btnProceed.addEventListener("click", function () {
   const txtAmount = document.getElementById("amount");
 
   const txtBalance = document.getElementById("balance");
-  let amount = txtAmount.value;
-  if (loadBalance < amount) {
-    console.log(
-      "Insufficient balance!\nYour remaining balance is: " + loadBalance
-    );
-    alert("Insufficient balance!");
+  if (txtMobile.value == "" || txtAmount.value == "") {
+    alert("Missing Fields!");
   } else {
-    let newBalance = pasaLoad(loadBalance, amount, txtMobile.value);
-    alert("Balance successfully transferred");
-    loadBalance = newBalance;
-    txtBalance.innerHTML = `${newBalance}`;
-    setTimeout(() => {
-      loadHistory();
-    }, 500);
-    // console.log(transHistory);
+    let amount = txtAmount.value;
+    if (loadBalance < amount) {
+      console.log(
+        "Insufficient balance!\nYour remaining balance is: " + loadBalance
+      );
+      alert("Insufficient balance!");
+    } else {
+      let newBalance = pasaLoad(loadBalance, amount, txtMobile.value);
+      alert("Balance successfully transferred");
+      loadBalance = newBalance;
+      txtBalance.innerHTML = `${newBalance}`;
+      setTimeout(() => {
+        loadHistory();
+      }, 500);
+      // console.log(transHistory);
+    }
   }
 });
 
