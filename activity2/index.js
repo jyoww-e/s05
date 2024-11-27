@@ -3,6 +3,7 @@ const transHistory = [];
 
 const btnProceed = document.getElementById("btnProceed");
 const btnAddBalance = document.getElementById("btnAddBalance");
+const AddModal = document.getElementById("addbalance-modal");
 
 function loadHistory() {
   const historyTable = document.getElementById("transact-table");
@@ -51,6 +52,18 @@ function isLoggedIn() {
   }
 }
 
+function addBalance() {
+  const txtBalance = document.getElementById("balance");
+  const txtAddBalance = document.getElementById("txtAddBalance");
+  let additional = Number(txtAddBalance.value);
+  let newBalance = loadBalance + additional;
+  loadBalance = newBalance;
+  txtBalance.innerHTML = `${newBalance}`;
+  txtAddBalance.value = "";
+  txtPassword.value = "";
+  alert("Balance successfully added.");
+}
+
 function proceedLoading(amount, mobile) {
   const txtBalance = document.getElementById("balance");
   if (loadBalance < amount) {
@@ -90,7 +103,6 @@ btnProceed.addEventListener("click", function () {
   }
 });
 
-const AddModal = document.getElementById("addbalance-modal");
 AddModal.addEventListener("hidden.bs.modal", () => {
   const txtAddBalance = document.getElementById("txtAddBalance");
   const txtPassword = document.getElementById("txtPassword");
@@ -103,15 +115,7 @@ AddModal.addEventListener("hidden.bs.modal", () => {
 btnAddBalance.addEventListener("click", function () {
   const txtPassword = document.getElementById("txtPassword");
   if (txtPassword.value === "SSCGi@123456") {
-    const txtBalance = document.getElementById("balance");
-    const txtAddBalance = document.getElementById("txtAddBalance");
-    let additional = Number(txtAddBalance.value);
-    let newBalance = loadBalance + additional;
-    loadBalance = newBalance;
-    txtBalance.innerHTML = `${newBalance}`;
-    txtAddBalance.value = "";
-    txtPassword.value = "";
-    alert("Balance successfully added.");
+    addBalance();
   } else {
     alert("Wrong password! Please try again.");
   }
