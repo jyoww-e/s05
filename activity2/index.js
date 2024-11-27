@@ -99,7 +99,11 @@ btnProceed.addEventListener("click", function () {
   } else {
     let amount = txtAmount.value;
     let mobile = txtMobile.value;
-    proceedLoading(amount, mobile);
+    if (!(amount <= 0)) {
+      proceedLoading(amount, mobile);
+    } else {
+      alert("Invalid amount!");
+    }
   }
 });
 
