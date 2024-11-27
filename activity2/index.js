@@ -39,8 +39,7 @@ function pasaLoad(loadBalance, amount, mobile) {
   return loadBalance;
 }
 
-window.addEventListener("DOMContentLoaded", function () {
-  const txtBalance = document.getElementById("balance");
+function isLoggedIn() {
   const sender = document.getElementById("sender");
 
   const getValues = new URLSearchParams(window.location.search);
@@ -50,7 +49,30 @@ window.addEventListener("DOMContentLoaded", function () {
     alert("No logged in account! Redirecting...");
     window.location.href = "index.html";
   }
+}
 
+function proceedLoading(amount, mobile) {
+  const txtBalance = document.getElementById("balance");
+  if (loadBalance < amount) {
+    console.log(
+      "Insufficient balance!\nYour remaining balance is: " + loadBalance
+    );
+    alert("Insufficient balance!");
+  } else {
+    let newBalance = pasaLoad(loadBalance, amount, mobile);
+    alert("Balance successfully transferred");
+    loadBalance = newBalance;
+    txtBalance.innerHTML = `${newBalance}`;
+    setTimeout(() => {
+      loadHistory();
+    }, 500);
+    // console.log(transHistory);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  const txtBalance = document.getElementById("balance");
+  isLoggedIn();
   txtBalance.innerHTML = `${loadBalance}`;
   loadHistory();
 });
@@ -59,26 +81,12 @@ btnProceed.addEventListener("click", function () {
   const txtMobile = document.getElementById("mobile");
   const txtAmount = document.getElementById("amount");
 
-  const txtBalance = document.getElementById("balance");
   if (txtMobile.value == "" || txtAmount.value == "") {
     alert("Missing Fields!");
   } else {
     let amount = txtAmount.value;
-    if (loadBalance < amount) {
-      console.log(
-        "Insufficient balance!\nYour remaining balance is: " + loadBalance
-      );
-      alert("Insufficient balance!");
-    } else {
-      let newBalance = pasaLoad(loadBalance, amount, txtMobile.value);
-      alert("Balance successfully transferred");
-      loadBalance = newBalance;
-      txtBalance.innerHTML = `${newBalance}`;
-      setTimeout(() => {
-        loadHistory();
-      }, 500);
-      // console.log(transHistory);
-    }
+    let mobile = txtMobile.value;
+    proceedLoading(amount, mobile);
   }
 });
 
