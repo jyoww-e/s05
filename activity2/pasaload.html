@@ -27,21 +27,21 @@
           <div class="modal-body">
            
             <div class="row mb-3">
-              <label for="txtAddBalance" class="col col-form-label">Amount:</label>
+              <label for="txtAddBalance" class="col-md-3 col-form-label">Amount:</label>
               <div class="col">
                   <input type="number" class="form-control" id="txtAddBalance" placeholder="Amount">
               </div>
             </div>
             <div class="row mb-3">
-              <label for="txtPassword" class="col col-form-label">Password:</label>
+              <label for="txtPassword" class="col-md-3 col-form-label">Password:</label>
               <div class="col">
                   <input type="password" class="form-control" id="txtPassword">
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btnAddBalance">Add Balance</button>
+            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn" id="btnAddBalance">Add Balance</button>
           </div>
         </div>
       </div>
@@ -50,10 +50,12 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <!-- <img src="img/logo2.png" alt="logo"/> -->
-             <h1>Pasaload</h1>
-        </a>
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/logo.png" alt="logo"/>
+             <!-- <h1>Pasaload</h1> -->
+              <h3 class="text-white">Pasaload</h3>
+          </a>
+          
           <button
             class="navbar-toggler"
             type="button"
@@ -114,21 +116,25 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <button class="btn btn-success rounded-pill" id="btnProceed">Proceed</button>
+                            <button class="btn rounded-pill" id="btnProceed">Proceed</button>
                         </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Transaction History</h4>
-                            </div>
-                            <div class="card-body">
-                                <table id="transact-table" class="table">
-                                    
-                                </table>
-                        </div>
+                        
 
                     </div>
                 </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title d-inline">Transaction History</h4>
+                </div>
+                <div class="card-body">
+                    <table id="transact-table" class="table">
+                        
+                    </table>
+            </div>
             </div>
           </div>
         </div>

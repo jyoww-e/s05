@@ -9,14 +9,16 @@ body {
 }
 
 .navbar-brand img {
-  width: 150px;
+  width: 80px;
   display: block;
   /* height: 60px; */
   /* margin: 10px auto; */
 }
 
 .navbar {
-  padding: 0.8rem;
+  /* padding: 0.8rem; */
+  padding: 0;
+  height: 60px;
   padding-right: 25px;
   margin-bottom: 2rem;
   background-image: linear-gradient(#51a3a3, #75485e);
@@ -48,6 +50,11 @@ body {
   color: #00ffaa;
 }
 
+.nav-link:focus,
+.navbar-brand:focus {
+  color: #00ffaa;
+}
+
 .form-control:focus {
   border-color: rgb(88, 128, 162);
   outline: 0;
@@ -55,15 +62,24 @@ body {
 }
 
 .btn {
-  background-image: linear-gradient(#51a3a3, #75485e);
-  border: none;
+  /* background-image: linear-gradient(#51a3a3, #75485e);
+  border: none; */
+  border-radius: 50px;
+  background-color: transparent;
+  background-image: none;
+  color: black;
+  border: 1px solid black;
 }
 
 .btn:hover {
-  background-image: linear-gradient(#69cfcf, #c0789b);
+  /* background-image: linear-gradient(#69cfcf, #c0789b);
 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border: none; */
   border: none;
+  background-image: linear-gradient(#f867b0, #c46b96);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
@@ -88,10 +104,44 @@ body {
   background-image: linear-gradient(#f33b97, #c44683);
   border: none;
   font-weight: bold;
+  color: white;
 }
 
 .login-form .btn:hover {
   border: none;
   background-image: linear-gradient(#f867b0, #c46b96);
   font-weight: normal;
+}
+
+.modal {
+  background-image: linear-gradient(
+    90deg,
+    rgba(81, 163, 163, 0.3),
+    rgba(192, 120, 155, 0.3)
+  );
+}
+
+.modal-content {
+  border: none;
+  border-radius: 40px;
+}
+
+.card-header {
+  background-image: linear-gradient(
+    90deg,
+    rgba(81, 163, 163, 0.8),
+    rgba(192, 120, 155, 0.8)
+  );
+  color: white;
+  border: none;
+}
+
+.card {
+  border: none;
+  border-bottom: 1px solid #f33b97;
+  min-height: 250px;
+}
+
+.table th {
+  border-bottom: 1px solid #f33b97;
 }
