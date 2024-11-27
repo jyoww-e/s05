@@ -101,7 +101,8 @@
                         <div class="row mb-3">
                             <label for="mobile" class="col col-form-label">Mobile Number:</label>
                             <div class="col">
-                                <input type="number" class="form-control" id="mobile" maxlength="11" placeholder="09XXXXXXXXX">
+                                <input type="text" class="form-control" id="mobile" maxlength="11" placeholder="09XXXXXXXXX"
+                                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                             </div>
                         </div>
 

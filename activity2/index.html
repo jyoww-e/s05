@@ -29,11 +29,12 @@
                 </label>
                 <div class="col">
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="mobile"
                     maxlength="11"
                     placeholder="09XXXXXXXXX"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                   />
                 </div>
               </div>

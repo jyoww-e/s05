@@ -1,4 +1,5 @@
 const btnLogin = document.getElementById("btnLogin");
+// const txtMobile = document.getElementById("mobile");
 
 btnLogin.addEventListener("click", function () {
   const txtMobile = document.getElementById("mobile");
