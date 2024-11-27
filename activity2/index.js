@@ -83,6 +83,10 @@ function proceedLoading(amount, mobile) {
   }
 }
 
+function checkValidMobile(mobile) {
+  return mobile.match(/09([0-9]{8})\w/) ? true : false;
+}
+
 window.addEventListener("DOMContentLoaded", function () {
   const txtBalance = document.getElementById("balance");
   isLoggedIn();
@@ -99,10 +103,11 @@ btnProceed.addEventListener("click", function () {
   } else {
     let amount = txtAmount.value;
     let mobile = txtMobile.value;
-    if (!(amount <= 0)) {
-      proceedLoading(amount, mobile);
+    if (!checkValidMobile(mobile)) {
+      alert("Invalid mobile number!");
     } else {
-      alert("Invalid amount!");
+      if (!(amount <= 0)) proceedLoading(amount, mobile);
+      else alert("Invalid amount!");
     }
   }
 });
