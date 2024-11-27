@@ -88,9 +88,3 @@ body {
   background-image: linear-gradient(#f867b0, #c46b96);
   font-weight: normal;
 }
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* -webkit-appearance: none;   */
-  /* -moz-appearance: textfield; */
-}

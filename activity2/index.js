@@ -56,12 +56,16 @@ function addBalance() {
   const txtBalance = document.getElementById("balance");
   const txtAddBalance = document.getElementById("txtAddBalance");
   let additional = Number(txtAddBalance.value);
-  let newBalance = loadBalance + additional;
-  loadBalance = newBalance;
-  txtBalance.innerHTML = `${newBalance}`;
-  txtAddBalance.value = "";
-  txtPassword.value = "";
-  alert("Balance successfully added.");
+  if (additional <= 0) {
+    alert("Cannot add 0 and below balance");
+  } else {
+    let newBalance = loadBalance + additional;
+    loadBalance = newBalance;
+    txtBalance.innerHTML = `${newBalance}`;
+    txtAddBalance.value = "";
+    txtPassword.value = "";
+    alert("Balance successfully added.");
+  }
 }
 
 function proceedLoading(amount, mobile) {
