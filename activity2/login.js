@@ -8,8 +8,10 @@ function checkValidMobile(mobile) {
 btnLogin.addEventListener("click", function () {
   const txtMobile = document.getElementById("mobile");
   const txtPassword = document.getElementById("password");
-  //   console.log(checkValidMobile(txtMobile.value));
-  if (checkValidMobile && txtPassword.value == "SSCGi@123456") {
+  if (
+    checkValidMobile(txtMobile.value) &&
+    txtPassword.value == "SSCGi@123456"
+  ) {
     alert("Login successful!");
     window.location.href = "pasaload.html?m=" + txtMobile.value;
   } else {

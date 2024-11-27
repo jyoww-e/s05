@@ -31,6 +31,7 @@ function loadHistory() {
 }
 
 function pasaLoad(loadBalance, amount, mobile) {
+  const sender = document.getElementById("sender");
   loadBalance -= amount;
   transHistory.push({
     mobile: mobile,
@@ -68,6 +69,12 @@ function addBalance() {
   }
 }
 
+function checkSender(receiver) {
+  const getValues = new URLSearchParams(window.location.search);
+  let sender = getValues.get("m");
+  return sender == receiver ? true : false;
+}
+
 function proceedLoading(amount, mobile) {
   const txtBalance = document.getElementById("balance");
   if (loadBalance < amount) {
@@ -76,13 +83,17 @@ function proceedLoading(amount, mobile) {
     );
     alert("Insufficient balance!");
   } else {
-    let newBalance = pasaLoad(loadBalance, amount, mobile);
-    alert("Balance successfully transferred");
-    loadBalance = newBalance;
-    txtBalance.innerHTML = `${newBalance}`;
-    setTimeout(() => {
-      loadHistory();
-    }, 500);
+    if (checkSender(mobile) == false) {
+      let newBalance = pasaLoad(loadBalance, amount, mobile);
+      alert("Balance successfully transferred");
+      loadBalance = newBalance;
+      txtBalance.innerHTML = `${newBalance}`;
+      setTimeout(() => {
+        loadHistory();
+      }, 500);
+    } else {
+      alert("You cannot transfer load to yourself");
+    }
     // console.log(transHistory);
   }
 }
