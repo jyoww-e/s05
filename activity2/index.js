@@ -41,6 +41,15 @@ function pasaLoad(loadBalance, amount, mobile) {
 
 window.addEventListener("DOMContentLoaded", function () {
   const txtBalance = document.getElementById("balance");
+  const sender = document.getElementById("sender");
+
+  const getValues = new URLSearchParams(window.location.search);
+  sender.innerHTML = "Hello, " + getValues.get("m");
+
+  if (!getValues.get("m")) {
+    alert("No logged in account! Redirecting...");
+    window.location.href = "index.html";
+  }
 
   txtBalance.innerHTML = `${loadBalance}`;
   loadHistory();
@@ -73,10 +82,29 @@ btnProceed.addEventListener("click", function () {
   }
 });
 
+const AddModal = document.getElementById("addbalance-modal");
+AddModal.addEventListener("hidden.bs.modal", () => {
+  const txtAddBalance = document.getElementById("txtAddBalance");
+  const txtPassword = document.getElementById("txtPassword");
+  setTimeout(() => {
+    txtAddBalance.value = "";
+    txtPassword.value = "";
+  }, 200);
+});
+
 btnAddBalance.addEventListener("click", function () {
-  const txtBalance = document.getElementById("balance");
-  let additional = prompt("Please enter balance to add:");
-  let newBalance = loadBalance + Number(additional);
-  loadBalance = newBalance;
-  txtBalance.innerHTML = `${newBalance}`;
+  const txtPassword = document.getElementById("txtPassword");
+  if (txtPassword.value === "SSCGi@123456") {
+    const txtBalance = document.getElementById("balance");
+    const txtAddBalance = document.getElementById("txtAddBalance");
+    let additional = Number(txtAddBalance.value);
+    let newBalance = loadBalance + additional;
+    loadBalance = newBalance;
+    txtBalance.innerHTML = `${newBalance}`;
+    txtAddBalance.value = "";
+    txtPassword.value = "";
+    alert("Balance successfully added.");
+  } else {
+    alert("Wrong password! Please try again.");
+  }
 });

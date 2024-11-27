@@ -49,11 +49,12 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(88, 128, 162, 0.25);
 }
 
-#btnProceed {
+.btn {
   background-image: linear-gradient(#51a3a3, #75485e);
   border: none;
 }
-#btnProceed:hover {
+
+.btn:hover {
   background-image: linear-gradient(#69cfcf, #c0789b);
   border: none;
 }
