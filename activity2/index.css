@@ -6,7 +6,7 @@
 
 body {
   font-family: "Montserrat", "sans-serif";
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .navbar-brand img {
@@ -145,8 +145,4 @@ body {
 
 .table th {
   border-bottom: 1px solid #f33b97;
-}
-
-#content-section {
-  height: 50vw;
 }
