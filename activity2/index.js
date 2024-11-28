@@ -65,6 +65,7 @@ function addBalance() {
     txtBalance.innerHTML = `${newBalance}`;
     txtAddBalance.value = "";
     txtPassword.value = "";
+    bootstrap.Modal.getInstance(AddModal).hide();
     alert("Balance successfully added.");
   }
 }
