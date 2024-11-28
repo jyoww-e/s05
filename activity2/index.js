@@ -8,8 +8,10 @@ const AddModal = document.getElementById("addbalance-modal");
 function loadHistory() {
   const historyTable = document.getElementById("transact-table");
   historyTable.innerHTML = "";
+  counter = 1;
   let str = `<thead>
                 <tr>
+                    <th>#</th>
                     <th>Mobile</th>
                     <th>Amount</th>
                     <th>Balance</th>
@@ -18,13 +20,26 @@ function loadHistory() {
             <tbody>`;
   for (let i = 0; i < transHistory.length; i++) {
     str += `<tr>
+                <td>${counter}</td>
                 <td>${transHistory[i].mobile}</td>
                 <td class="text-end">&#8369; ${transHistory[i].amount}</td>
                 <td class="text-end">&#8369; ${transHistory[i].balance}</td>
             </tr>`;
+    counter++;
   }
 
-  str += "</tbody>";
+  str += `</tbody>`;
+  str +=
+    counter > 6
+      ? `<tfoot>
+  <tr>
+      <th>#</th>
+      <th>Mobile</th>
+      <th>Amount</th>
+      <th>Balance</th>
+  </tr>
+</tfoot>`
+      : "";
 
   historyTable.innerHTML = str;
   //   console.log(str);

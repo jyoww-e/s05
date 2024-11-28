@@ -140,7 +140,12 @@ body {
 .card {
   border: none;
   border-bottom: 1px solid #f33b97;
-  min-height: 250px;
+  /* min-height: 250px; */
+  height: 450px;
+}
+
+.table-container {
+  overflow-y: auto;
 }
 
 .table th {
